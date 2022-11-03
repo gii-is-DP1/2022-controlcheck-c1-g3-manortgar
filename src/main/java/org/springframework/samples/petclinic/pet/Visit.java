@@ -28,6 +28,7 @@ import javax.validation.constraints.NotEmpty;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.samples.petclinic.model.BaseEntity;
 import org.springframework.samples.petclinic.recoveryroom.RecoveryRoom;
+import org.springframework.samples.petclinic.recoveryroom.RecoveryRoomRepository;
 
 /**
  * Simple JavaBean domain object representing a visit.
@@ -58,7 +59,10 @@ public class Visit extends BaseEntity {
 	@ManyToOne
 	@JoinColumn(name = "pet_id")
 	private Pet pet;
-
+	
+//	@ManyToOne
+//	@JoinColumn(name = "room_id")
+//	private RecoveryRoom room;
 	/**
 	 * Creates a new instance of Visit for the current date
 	 */
@@ -113,14 +117,15 @@ public class Visit extends BaseEntity {
 	public void setPet(Pet pet) {
 		this.pet = pet;
 	}
-
-	public RecoveryRoom getRecoveryRoom() {
-		// To be implemented
-		return null;
-	}
-
-	public void setRecoveryRoom(RecoveryRoom room) {
-		// To be implemented
-	}
+	
+	
+	
+//	public RecoveryRoom getRecoveryRoom() {
+//		return this.room;
+//	}
+//
+//	public void setRecoveryRoom(RecoveryRoom room) {
+//		this.room=room;;
+//	}
 
 }
